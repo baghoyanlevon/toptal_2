@@ -20,7 +20,7 @@ By deafult server will be started at http://localhost:8000/
 
 ### Build and Start Client
 1. Go to client folder 
-2. Open ApartmentRentals.sln with *Visual Studio*. 
+2. Open [ApartmentRentals.sln](client/ApartmentRentals.sln) with *Visual Studio*. 
 3. Build&Run the project
 
 ## Run UnitTests
