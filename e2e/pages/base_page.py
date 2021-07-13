@@ -1,8 +1,10 @@
+import os
 import time
 
 from pywinauto.application import Application
 
-_app = Application(backend="uia").start("C:/Users/levon/source/repos/ApartmentRentals/x64/Release/ApartmentRentals.exe",
+print(os.getcwd()+"../../ApartmentsRental/x64/Release/ApartmentRentals.exe")
+_app = Application(backend="uia").start("../client/x64/Release/ApartmentRentals.exe",
                                         wait_for_idle=False)
 _signedIn = False
 
