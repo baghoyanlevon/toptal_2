@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{95C8DB5D-3133-408D-ABD2-01D46F01FE03}</ProjectGuid>
+    <Keyword>QtVS_v304</Keyword>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">10.0.19041.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">10.0.19041.0</WindowsTargetPlatformVersion>
+    <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt_defaults.props')">
+    <Import Project="$(QtMsBuild)\qt_defaults.props" />
+  </ImportGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="QtSettings">
+    <QtInstall>qt5.12</QtInstall>
+    <QtModules>core;network;webchannel;webengine;webenginewidgets;widgets</QtModules>
+    <QtBuildConfig>debug</QtBuildConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="QtSettings">
+    <QtInstall>qt5.12</QtInstall>
+    <QtModules>core;network;webchannel;webengine;webenginewidgets;widgets</QtModules>
+    <QtBuildConfig>release</QtBuildConfig>
+  </PropertyGroup>
+  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') or !Exists('$(QtMsBuild)\qt.props')">
+    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />
+  </Target>
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Label="Shared" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(QtMsBuild)\Qt.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
+    <ClCompile>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'" Label="Configuration">
+    <ClCompile>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <Optimization>MaxSpeed</Optimization>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Apartment.cpp" />
+    <ClCompile Include="ApartmentsWidget.cpp" />
+    <ClCompile Include="ApartmentViewer.cpp" />
+    <ClCompile Include="ApartmentViewersContainter.cpp" />
+    <ClCompile Include="Controller.cpp" />
+    <ClCompile Include="DashboardWidget.cpp" />
+    <ClCompile Include="DataManager.cpp" />
+    <ClCompile Include="FilterWidget.cpp" />
+    <ClCompile Include="HTMLBuilder.cpp" />
+    <ClCompile Include="IManagementWidget.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="MapsBridge.cpp" />
+    <ClCompile Include="MapsView.cpp" />
+    <ClCompile Include="Models.cpp" />
+    <ClCompile Include="Realtor.cpp" />
+    <ClCompile Include="RequestDispatcher.cpp" />
+    <ClCompile Include="RequestManager.cpp" />
+    <ClCompile Include="RequestSender.cpp" />
+    <ClCompile Include="SignInUpWidget.cpp" />
+    <ClCompile Include="SignInWidget.cpp" />
+    <ClCompile Include="SignUpWidget.cpp" />
+    <ClCompile Include="TableWidget.cpp" />
+    <ClCompile Include="User.cpp" />
+    <ClCompile Include="UsersManagementWidget.cpp" />
+    <ClCompile Include="UsersTableWidget.cpp" />
+    <ClCompile Include="UserWidget.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Apartment.h" />
+    <ClInclude Include="CommonConstants.h" />
+    <ClInclude Include="DataManager.h" />
+    <ClInclude Include="HTMLBuilder.h" />
+    <ClInclude Include="MarkerData.h" />
+    <ClInclude Include="Models.h" />
+    <ClInclude Include="Realtor.h" />
+    <ClInclude Include="User.h" />
+    <QtMoc Include="UserWidget.h" />
+    <QtMoc Include="UsersTableWidget.h" />
+    <QtMoc Include="UsersManagementWidget.h" />
+    <QtMoc Include="TableWidget.h" />
+    <QtMoc Include="SignUpWidget.h" />
+    <QtMoc Include="SignInWidget.h" />
+    <QtMoc Include="SignInUpWidget.h" />
+    <QtMoc Include="RequestSender.h" />
+    <QtMoc Include="RequestManager.h" />
+    <QtMoc Include="RequestDispatcher.h" />
+    <QtMoc Include="MapsView.h" />
+    <QtMoc Include="MapsBridge.h" />
+    <QtMoc Include="IManagementWidget.h" />
+    <QtMoc Include="FilterWidget.h" />
+    <QtMoc Include="DashboardWidget.h" />
+    <QtMoc Include="Controller.h" />
+    <QtMoc Include="ApartmentViewersContainter.h" />
+    <QtMoc Include="ApartmentViewer.h" />
+    <QtMoc Include="ApartmentsWidget.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="ApartmentRentals.qrc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
+    <Import Project="$(QtMsBuild)\qt.targets" />
+  </ImportGroup>
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,25 @@
+<RCC>
+    <qresource prefix="/qrc">
+        <file alias="cancel.png">Resources/cancel.png</file>
+        <file alias="delete.png">Resources/delete.png</file>
+        <file alias="down-arrow.png">Resources/down-arrow.png</file>
+        <file alias="down-arrow-hover-press.png">Resources/down-arrow-hover-press.png</file>
+        <file alias="save.png">Resources/floppy-disk.png</file>
+        <file alias="add.png">Resources/plus.png</file>
+        <file alias="style.qss">Resources/style.qss</file>
+        <file alias="up-arrow.png">Resources/up-arrow.png</file>
+        <file alias="up-arrow-hover-press.png">Resources/up-arrow-hover-press.png</file>
+        <file alias="export.png">Resources/export.png</file>
+        <file alias="sign-out.png">Resources/log_out.png</file>
+        <file alias="refresh.png">Resources/refresh.png</file>
+    </qresource>
+    <qresource prefix="/">
+        <file>Resources/map.html</file>
+        <file>Resources/qwebchannel.js</file>
+        <file>Resources/green-dot.png</file>
+        <file>Resources/red-dot.png</file>
+        <file>Resources/yellow-dot.png</file>
+        <file>Resources/map.css</file>
+        <file>Resources/blue-dot.png</file>
+    </qresource>
+</RCC>

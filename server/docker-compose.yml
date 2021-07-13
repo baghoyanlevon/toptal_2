@@ -1,0 +1,30 @@
+version: "3"
+
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - "8000:8000"
+
+    volumes:
+      - ./app:/app
+
+    command: >
+      sh -c "python manage.py wait_for_db &&
+             python manage.py migrate &&
+             python manage.py runserver 0.0.0.0:8000"
+    environment:
+      - DB_HOST=db_default
+      - DB_NAME=apartment_rental
+      - DB_USER=postgres
+      - DB_PASS=supersecretpassword
+    depends_on:
+      - db_default
+
+  db_default:
+    image: postgres:10-alpine
+    environment:
+      - POSTGRES_DB=apartment_rental
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=supersecretpassword
