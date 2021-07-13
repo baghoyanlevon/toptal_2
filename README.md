@@ -1,8 +1,8 @@
 # **Apartment rentals**
 A simple apartment renting application built with C++/Qt and Django
 ## Build requirements
-* python 3.7 and more 
-* qt 5.15 and more
+* Python 3.7 and more 
+* Qt 5.15 or above
 ## Local Building
 
 Clone the repository.
@@ -21,9 +21,7 @@ By deafult server will be started at http://localhost:8000/
 ### Build and Start Client
 1. Go to client folder 
 2. Open ApartmentRentals.sln with *Visual Studio*. 
-3. In *Solution Explorer*, choose or open the solution.
-4. Build the project
-5. Run executable from target directory
+3. Build&Run the project
 
 ## Run UnitTests
 
